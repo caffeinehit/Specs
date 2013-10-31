@@ -40,13 +40,15 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '5.0'
   s.osx.deployment_target = '10.7'
 
-  s.ios.source_files = FileList['*.{h,m}'].exclude(/\+OSX\./)
-  s.osx.source_files = FileList['*.{h,m}'].exclude(/\+iOS\./)
+  s.source_files = '*.{h,m}'
+  s.ios.exclude_files = '**/*+OSX.*'
+  s.osx.exclude_files = '**/*+iOS.*'
 
   s.public_header_files = ['NIKFontAwesomeIconFactory*.h', 'NIKFontAwesomeIcon.h']
 
   s.resource  = 'Font-Awesome/font/FontAwesome.otf'
-  s.framework  = 'CoreText'
+  s.ios.frameworks = 'CoreText', 'CoreGraphics'
+  s.osx.frameworks = 'CoreText', 'CoreGraphics', 'ApplicationServices'
   s.requires_arc = true
 
 end

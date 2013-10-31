@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name     = 'BaseKit'
   s.version  = '0.2.5'
-  s.license  = 'Apache 2'
+  s.license  = "Apache License, Version 2.0"
   s.summary  = 'BaseKit is a set of IOS class to make your life easier.'
   s.homepage = 'https://github.com/brunow/BaseKit'
   s.author   = { 'Bruno Wernimont' => 'bruno.wernimont+github@gmail.com' }
@@ -9,7 +9,6 @@ Pod::Spec.new do |s|
 
   s.platform = :ios
   s.preserve_paths  = 'Examples', 'GHUnitIOS.framework', 'Test', 'Vendor', 'README.md', '.gitignore', 'BaseKit.xcodeproj', 'LICENSE', 'form-mapping.png'
-  s.compiler_flags = '-Wno-format'
 
   s.subspec 'Core' do |core|
     core.source_files = 'Code/Core/*.{h,m}'
